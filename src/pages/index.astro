@@ -1,7 +1,10 @@
 ---
-
+import "../styles/global.css"
+import { Image } from "astro:assets";
+import labsImage10 from "../assets/techandstorylab/Labs_10.jpg"
+import labsImage3 from "../assets/techandstorylab/Labs_3.jpg"
+import Card from "../components/Card.astro";
 ---
-
 
 <html lang="en">
 	<head>
@@ -11,9 +14,53 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://use.typekit.net/dyk7emh.css">
-		<title>Astro</title>
+		<title>Techandstorylab</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		
+		<h1>Tech and Story Lab</h1>
+		<section>
+			
+					<Card headline="Se udstyr og studios" text="Find udstyr og kreative studier til dit næste projekt."/>
+					<Image src={labsImage10} alt="billede af fotostudie" width="500"/>
+					<Image src={labsImage3} alt="billede af udstyr" width="500"/>
+		</section>
+		<section>
+		
+					<Card headline="Udforsk og oplev labbet" text="Kom helt tæt på og udforsk Tech & Story Lab."/>
+		</section>
+<section>
+                
+					<Card headline="Udforsk. Eksperimentér. Skab." text="Få inspiration fra idéer og eksperimenter, som studerende
+                        og undervisere har skabt med teknologi i Tech & Story Lab."/>
+</section>
+<section>
+	 <h2>Det sker i labbet</h2>
+
+                    <p>November</p>
+
+                    <ul>
+                        <li>AI Workshop</li>
+                        <li>Tech Bingo</li>
+                        <li>VR Experience Day</li>
+                        <li>Photo Challenge</li>
+                    </ul>
+</section>
+<section>
+					<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til
+                        for inspiration, sparring og hjælp."/>
+</section>
+<section>
+	 <h2>Ofte stillede spørgsmål</h2>
+
+                    <ul>
+                        <li>Åbningstider</li>
+                        <li>Hvem kan bruge Tech & Story Lab?</li>
+                        <li>Hvordan booker eller låner jeg udstyr?</li>
+                        <li>Kan jeg få hjælp og vejledning?</li>
+                    </ul>
+</section>
+		
+		
 	</body>
 </html>

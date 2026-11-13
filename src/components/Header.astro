@@ -1,10 +1,13 @@
 ---
 const pathname = Astro.url.pathname
+import { Image } from "astro:assets";
+import logoekImage from "../assets/techandstorylab/logoek.png";
 ---
 
   <header class="site-header">
     <div>
-      <a class="logo" href="index.astro"><img src="" alt=""></a>
+        <Image class="logo" src={logoekImage} alt="EK logo" width="200"/>
+      
       </div>
       <div>
       <nav class="site-nav" aria-label="Hovedmenu">
@@ -26,21 +29,23 @@ const pathname = Astro.url.pathname
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem 2rem;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
 .logo {
-  font-size: 1.375rem;
+  /* font-size: 1.375rem;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: none; */
+  padding-left: 20px;
+
 }
 
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 3rem;
   margin: 0;
   /* padding: 0; */
   list-style: none;

@@ -1,9 +1,10 @@
 ---
-
+import { Image } from "astro:assets";
+import logoekImage from "../assets/techandstorylab/logoek.png";
 ---
  <footer class="site-footer">
     <div>
-        <img src="" alt="">
+        <Image class="logo" src={logoekImage} alt="EK logo" width="300"/>
     </div>
     <div>
       <h3>Åbningstider i labet</h3>
@@ -50,5 +51,8 @@ a:hover{
 h3{
     color: var(--secondary);
 margin-bottom: 30px;
+}
+.logo{
+    padding-left: 50px;
 }
   </style>

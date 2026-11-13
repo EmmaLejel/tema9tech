@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Layout from "../layouts/Layout.astro"
 import { Image } from "astro:assets";
 import labsImage10 from "../assets/techandstorylab/Labs_10.jpg";
 import labsImage3 from "../assets/techandstorylab/Labs_3.jpg";
@@ -29,7 +30,7 @@ const studiosresponse =  await fetch (apiurl + studiosTableName);
 const studiosData = await studiosresponse.json();
 console.log("studiosData", studiosData);
 ---
-
+<Layout>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -88,3 +89,4 @@ console.log("studiosData", studiosData);
 		
 	</body>
 </html>
+</Layout>

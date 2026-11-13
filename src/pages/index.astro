@@ -1,9 +1,33 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 import { Image } from "astro:assets";
-import labsImage10 from "../assets/techandstorylab/Labs_10.jpg"
-import labsImage3 from "../assets/techandstorylab/Labs_3.jpg"
+import labsImage10 from "../assets/techandstorylab/Labs_10.jpg";
+import labsImage3 from "../assets/techandstorylab/Labs_3.jpg";
 import Card from "../components/Card.astro";
+const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
+const equipmentTableName = "equipment";
+const eventsTableName = "events";
+const studiosTableName = "studios";
+
+/********** smid aldrig en secret key ind i Github!!!! ************/
+const key = "sb_publishable_EjngztgPh6-DZBQgeRY6dQ_tiyq7nGO"
+const options = {
+	headers: { 
+apikey: key,
+	},
+}
+
+const equipmentresponse =  await fetch (apiurl + equipmentTableName, options);
+const equipmentData = await equipmentresponse.json();
+console.log("equipmentData", equipmentData);
+
+const eventsresponse =  await fetch (apiurl + eventsTableName);
+const eventsData = await eventsresponse.json();
+console.log("eventsData", eventsData);
+
+const studiosresponse =  await fetch (apiurl + studiosTableName);
+const studiosData = await studiosresponse.json();
+console.log("studiosData", studiosData);
 ---
 
 <html lang="en">

@@ -1,6 +1,14 @@
 ---
 import "../styles/global.css"
+const {data} = Astro.props;
+
 ---
+
+<article>
+	<h3>{data.name}</h3>
+    <a href=`/udstyr/${data.id}`>Læs mere</a>
+</article>
+
 <style>
     h3{
         color: var(--highlight);

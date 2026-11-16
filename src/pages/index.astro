@@ -5,8 +5,8 @@ import { Image } from "astro:assets";
 import labsImage10 from "../assets/techandstorylab/Labs_10.jpg";
 import labsImage3 from "../assets/techandstorylab/Labs_3.jpg";
 import Card from "../components/Card.astro";
+
 const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
-const equipmentTableName = "equipment";
 const eventsTableName = "events";
 const studiosTableName = "studios";
 
@@ -18,10 +18,6 @@ apikey: key,
 	},
 }
 
-const equipmentresponse =  await fetch (apiurl + equipmentTableName, options);
-const equipmentData = await equipmentresponse.json();
-console.log("equipmentData", equipmentData);
-
 const eventsresponse =  await fetch (apiurl + eventsTableName);
 const eventsData = await eventsresponse.json();
 console.log("eventsData", eventsData);
@@ -31,17 +27,6 @@ const studiosData = await studiosresponse.json();
 console.log("studiosData", studiosData);
 ---
 <Layout>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://use.typekit.net/dyk7emh.css">
-		<title>Techandstorylab</title>
-	</head>
-	<body>
 		
 		<h1>Tech and Story Lab</h1>
 		<section>
@@ -71,22 +56,18 @@ console.log("studiosData", studiosData);
                         <li>Photo Challenge</li>
                     </ul>
 </section>
-<section>
-					<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til
-                        for inspiration, sparring og hjælp."/>
-</section>
-<section>
-	 <h2>Ofte stillede spørgsmål</h2>
+	<section>
+		<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til
+							for inspiration, sparring og hjælp."/>
+	</section>
+	<section>
+		<h2>Ofte stillede spørgsmål</h2>
 
-                    <ul>
-                        <li>Åbningstider</li>
-                        <li>Hvem kan bruge Tech & Story Lab?</li>
-                        <li>Hvordan booker eller låner jeg udstyr?</li>
-                        <li>Kan jeg få hjælp og vejledning?</li>
-                    </ul>
-</section>
-		
-		
-	</body>
-</html>
+						<ul>
+							<li>Åbningstider</li>
+							<li>Hvem kan bruge Tech & Story Lab?</li>
+							<li>Hvordan booker eller låner jeg udstyr?</li>
+							<li>Kan jeg få hjælp og vejledning?</li>
+						</ul>
+	</section>
 </Layout>

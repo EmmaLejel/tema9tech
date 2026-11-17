@@ -4,7 +4,16 @@ import Layout from "../layouts/Layout.astro"
 import { Image } from "astro:assets";
 import labsImage10 from "../assets/techandstorylab/Labs_10.jpg";
 import labsImage3 from "../assets/techandstorylab/Labs_3.jpg";
+import labsImage12 from"../assets/techandstorylab/Labs_12.jpg";
+import labsImage15 from"../assets/techandstorylab/Labs_15.jpg";
+import labsImage1 from"../assets/techandstorylab/Labs_1.jpg";
+import mikki from"../assets/techandstorylab/mikki.png";
+import frederick from"../assets/techandstorylab/frederick.png";
+import luke from"../assets/techandstorylab/luke.png";
+import kristoffer from"../assets/techandstorylab/kristoffer.png";
+
 import Card from "../components/Card.astro";
+// import Image from "astro/components/Image.astro";
 
 const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
 const eventsTableName = "events";
@@ -18,18 +27,22 @@ apikey: key,
 	},
 }
 
-const eventsresponse =  await fetch (apiurl + eventsTableName);
+const eventsresponse =  await fetch (apiurl + eventsTableName, options);
 const eventsData = await eventsresponse.json();
 console.log("eventsData", eventsData);
 
-const studiosresponse =  await fetch (apiurl + studiosTableName);
+const studiosresponse =  await fetch (apiurl + studiosTableName, options);
 const studiosData = await studiosresponse.json();
 console.log("studiosData", studiosData);
 ---
+
+
+
 <Layout>
+
 		
 		<h1>Tech and Story Lab</h1>
-		<section>
+		<section class="grid_1">
 			
 					<Card headline="Se udstyr og studios" text="Find udstyr og kreative studier til dit næste projekt."/>
 					<Image src={labsImage10} alt="billede af fotostudie" width="500"/>
@@ -39,11 +52,22 @@ console.log("studiosData", studiosData);
 		
 					<Card headline="Udforsk og oplev labbet" text="Kom helt tæt på og udforsk Tech & Story Lab."/>
 		</section>
-<section>
+<section class="hero_text">
                 
 					<Card headline="Udforsk. Eksperimentér. Skab." text="Få inspiration fra idéer og eksperimenter, som studerende
                         og undervisere har skabt med teknologi i Tech & Story Lab."/>
 </section>
+
+<div class="hero">
+<section class="hero_image">
+
+<Image src={labsImage12} alt="billede af studie" width="200"/>
+<Image src={labsImage15} alt="billede af sy studie" width="200"/>
+<Image src={labsImage1} alt="billede 1" width="200"/>
+
+</section>
+</div>
+
 <section>
 	 <h2>Det sker i labbet</h2>
 
@@ -60,14 +84,50 @@ console.log("studiosData", studiosData);
 		<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til
 							for inspiration, sparring og hjælp."/>
 	</section>
+
+<section class="baggrund">
+  <ul class="teamet">
+    <li class="person">
+      <Image src={mikki} alt="Mikkel Simonsen" />
+      <h3>Mikkel Simonsen</h3>
+      <p>Lab-assistent</p>
+      <p>Telefon: 46 46 04 42<br />E-mail: <a href="mailto:misi@ek.dk">misi@ek.dk</a></p>
+    </li>
+
+    <li class="person">
+      <Image src={luke} alt="Luke Julius Frost" />
+      <h3>Luke Julius Frost</h3>
+      <p>Lab-specialist</p>
+      <p>Telefon: 46 46 04 42<br />E-mail: <a href="mailto:ljfk@ek.dk">ljfk@ek.dk</a></p>
+    </li>
+
+    <li class="person">
+      <Image src={frederick} alt="Frederick Lehmann Rosling" />
+      <h3>Frederick Lehmann Rosling</h3>
+      <p>Lab-manager</p>
+      <p>Telefon: 46 46 04 42<br />E-mail: <a href="mailto:frfr@ek.dk">frfr@ek.dk</a></p>
+    </li>
+
+    <li class="person">
+      <Image src={kristoffer} alt="Kristoffer Hygum Nielsen" />
+      <h3>Kristoffer Hygum Nielsen</h3>
+      <p>Lab-assistent</p>
+      <p>Telefon: 46 46 04 42<br />E-mail: <a href="mailto:krni@ek.dk">krni@ek.dk</a></p>
+    </li>
+  </ul>
+</section>
+
+
 	<section>
 		<h2>Ofte stillede spørgsmål</h2>
 
 						<ul>
-							<li>Åbningstider</li>
-							<li>Hvem kan bruge Tech & Story Lab?</li>
-							<li>Hvordan booker eller låner jeg udstyr?</li>
-							<li>Kan jeg få hjælp og vejledning?</li>
+							<li>ÅBNINGSTIDER</li>
+							<li>HVEM KAN BRUGE TECH & STORY LAB?</li>
+							<li>HVORDAN BOOKER JEG ELLER LÅNER UDSTYR</li>
+							<li>KAN JEG FÅ HJÆLP OG VEJLEDNING</li>
 						</ul>
 	</section>
+ 
 </Layout>
+<style></style>

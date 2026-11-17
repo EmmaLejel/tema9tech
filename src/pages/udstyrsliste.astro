@@ -21,21 +21,24 @@ console.log("equipmentData", equipmentData);
 ---
 
 <Layout>
-	<section>
+    <section class="studiekort">
+        <h2>Medbring studiekort</h2>
+    </section>
+	<section class="intro">
 		<h1>Udstyr</h1>
         <h2>Teknologien er din legeplads</h2>
          <p>Fra kreativs værktøj til avanceret teknologi - udforsk vores udstyr, lån det, du skal bruge nede i labbet for at føre dine ideer ud i livet</p>
          <p>Ingen online reservation. Bare kom forbi.</p>
     </section>
-    <section>
+    <section class="intro">
         <h3>Kategorier</h3>
          <h3>Underkategorier</h3>
     </section>
-    <section class="baggrundscard">
-        <div>
+    <section>
+        <div class="udstyrgrid">
                 {
                     equipmentData.map((udstyr) => {
-                        return <Udstyr data={udstyr} />
+                      return <Udstyr data={udstyr} /> 
                     })
                 }
         </div>

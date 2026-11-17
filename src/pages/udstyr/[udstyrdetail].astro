@@ -1,6 +1,4 @@
 ---
-
-import Layout from "../layouts/Layout.astro";
 export async function getStaticPaths() {
   const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
   const equipmentTableName = "equipment";
@@ -27,13 +25,19 @@ export async function getStaticPaths() {
     });
   }
 
+
   const { equipment } = Astro.props;
+    import Layout from "../../layouts/Layout.astro";
 ---
 <Layout>
+  <div>
 <h1>{equipment.name}</h1>
 <p>{equipment.category}</p>
 <p>{equipment.subcategory}</p>
  <img src={equipment.image}>
  <h3>{equipment.availability}</h3>
-   <button>BOOK</button> 
+ </div>
+   <section>
+<a class="button" href="#">Se ledige tider</a>
+    </section>
 </Layout>

@@ -20,12 +20,14 @@ body {
   font-family: "oso", sans-serif;
   min-height: 100vh;
   line-height: 1.6;
-}
-main {
   padding: 2rem;
 }
 
 /*font*/
+
+ul {
+  list-style: none;
+}
 a {
   color: var(--primary);
   text-decoration: none;
@@ -45,6 +47,7 @@ h2 {
   font-family: "oso-sans", sans-serif;
   font-weight: 700;
   font-style: normal;
+  margin-top: 50px;
 }
 h3 {
   color: var(--primary);
@@ -62,6 +65,10 @@ p {
   font-style: normal;
 }
 
+li {
+  text-decoration: none;
+}
+
 /*knapper*/
 .button {
   display: inline-block;
@@ -75,4 +82,63 @@ p {
   transform: scale(1.1);
   background: var(--secondary);
   color: var(--primary);
+}
+/* til udstyrslisten*/
+.udstyrgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  padding: 4rem 0;
+}
+.card {
+  background: var(--primary);
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 15px 20px;
+  justify-content: center;
+}
+.intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.studiekort {
+  background-color: var(--secondary);
+  color: #6d003e;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  text-align: right;
+}
+/* forside */
+.center {
+  text-align: center;
+}
+
+.background {
+  background-color: var(--primary);
+  color: var(--white);
+  align-items: center;
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.pink {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px;
+}
+
+.spørgsmål {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 4rem;
+  margin-bottom: 80px;
 }

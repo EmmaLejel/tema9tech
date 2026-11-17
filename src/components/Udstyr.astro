@@ -4,20 +4,23 @@ const {data} = Astro.props;
 
 ---
 
-<article>
+<article class="card">
     <img src={data.image}>
     <h3>{data.name}</h3>
     <a href=`/udstyr/${data.id}`>Læs mere</a>
 </article>
 
-<style>
-    .baggrundscard{
-        background-color: var(--primary);
-    }
+
+  <style>
+  
     h3{
         color: var(--white);
-    }
+         margin-bottom: 6px;
+        }
     a{
         color: var(--white);
-    }
-</style>
+        text-decoration-line: underline;
+        }
+    
+  </style>
+

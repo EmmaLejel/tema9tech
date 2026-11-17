@@ -5,7 +5,8 @@ const {data} = Astro.props;
 ---
 
 <article>
-	<h3>{data.name}</h3>
+    <img src={data.image}>
+    <h3>{data.name}</h3>
     <a href=`/udstyr/${data.id}`>Læs mere</a>
 </article>
 

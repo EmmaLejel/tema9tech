@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+const {member} = Astro.props;
+---
+<article class="teamcard">
+ <img src={member.image} alt={member.name} />
+
+
+<div class="member-info">
+    <h3>{member.name}</h3>
+    <p>{member.role}</p>
+    <p>Telefon: {member.phone}</p>
+    <p>E-mail: <a href={`mailto:${member.email}`}>
+                    {member.email}
+                </a></p>
+
+</div>
+</article>
+
+
+<style>
+.teamcard {
+    background-color: var(--secondary);
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.teamcard img {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.member-info h3 {
+    font-style: normal;
+}
+
+.member-info h3, p, a{
+    color: var(--white);
+}
+
+</style>

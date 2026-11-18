@@ -136,18 +136,15 @@ li {
 .background {
   background-color: var(--primary);
   color: var(--white);
-  align-items: center;
   padding: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
 }
 
-.pink {
-  background: var(--secondary);
-  color: var(--white);
-  padding: 20px;
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .spørgsmål {

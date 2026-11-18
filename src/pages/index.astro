@@ -9,11 +9,14 @@ import labsImage11 from "../assets/techandstorylab/Labs_11.jpg";
 import labsImage12 from "../assets/techandstorylab/Labs_12.jpg";
 import labsImage13 from "../assets/techandstorylab/Labs_13.jpg";
 import Card from "../components/Card.astro";
+import TeamCard from "../components/Teamcard.astro";
 // import Image from "astro/components/Image.astro";
 
+/* fetch data fra supabase */
 const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
 const eventsTableName = "events";
 const studiosTableName = "studios";
+const teamTableName = "Team";
 
 /********** smid aldrig en secret key ind i Github!!!! ************/
 const key = "sb_publishable_EjngztgPh6-DZBQgeRY6dQ_tiyq7nGO"
@@ -30,6 +33,10 @@ console.log("eventsData", eventsData);
 const studiosresponse =  await fetch (apiurl + studiosTableName, options);
 const studiosData = await studiosresponse.json();
 console.log("studiosData", studiosData);
+
+const teamresponse =  await fetch (apiurl + teamTableName, options);
+const teamData = await teamresponse.json();
+console.log("teamData", teamData);
 ---
 <Layout>
 		
@@ -70,41 +77,17 @@ console.log("studiosData", studiosData);
                     </ul>
 </section>
 	<section class="center">
-		<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til
-							for inspiration, sparring og hjælp."/>
+		<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til for inspiration, sparring og hjælp."/>
 	</section>
-	<section class="background">
-		<div class="pink">
-			image
-			<p>Mikkel Simonsen</p>
-			<p>Lab-assistent</p>
-			<p>Telefon: 46 46 04 42</p>
-			<p>Email: misi@ek.dk</p>
-		</div>
-		<div class="pink">
-			image
-			<p>Luke Julius Frost</p>
-			<p>Lab-assistent</p>
-			<p>Telefon: 46 46 04 42</p>
-			<p>Email: misi@ek.dk</p>
-		</div>
-		<div class="pink">
-			image
-			<p>Frederick Lehmann Rosling</p>
-			<p>Lab-assistent</p>
-			<p>Telefon: 46 46 04 42</p>
-			<p>Email: misi@ek.dk</p>
-		</div>
-		<div class="pink">
-			image
-			<p>Kristoffer Hygum Nielsen</p>
-			<p>Lab-assistent</p>
-			<p>Telefon: 46 46 04 42</p>
-			<p>Email: misi@ek.dk</p>
-		</div>
-		
-	</section>
-	<section class="center">
+	
+<section class="background">
+    <section class="team-grid">
+        {teamData.map((member) => (
+            <TeamCard member={member} />
+        ))}
+    </section>
+</section>
+<section class="center">
 		<h2>Ofte stillede spørgsmål</h2>
 
 						<ul class="spørgsmål">

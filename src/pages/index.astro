@@ -23,11 +23,11 @@ apikey: key,
 	},
 }
 
-const eventsresponse =  await fetch (apiurl + eventsTableName);
+const eventsresponse =  await fetch (apiurl + eventsTableName, options);
 const eventsData = await eventsresponse.json();
 console.log("eventsData", eventsData);
 
-const studiosresponse =  await fetch (apiurl + studiosTableName);
+const studiosresponse =  await fetch (apiurl + studiosTableName, options);
 const studiosData = await studiosresponse.json();
 console.log("studiosData", studiosData);
 ---

@@ -24,22 +24,14 @@ body {
   overflow-x: clip;
 }
 
-/*font*/
-
 ul {
   list-style: none;
 }
 a {
   color: var(--primary);
   text-decoration: none;
+  font-size: 1.5rem;
 }
-
-/* a:hover {
-  color: var(--primary);
-  text-decoration: none;
-  background-color: var(--secondary); */
-/* border-radius: 50px; **********er det rigtigt?********** */
-/* } */
 
 h1 {
   color: var(--primary);
@@ -86,12 +78,13 @@ li {
 /*knapper*/
 .button {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 1.8rem 5.5rem;
   background: var(--primary);
   color: var(--background);
   border-radius: 50px;
   margin-bottom: 20px;
 }
+
 .button:hover {
   transform: scale(1.1);
   background: var(--secondary);
@@ -131,6 +124,13 @@ li {
 /* forside */
 .center {
   text-align: center;
+}
+
+.herovideo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 40px;
 }
 
 /* Studios og udstyr CTA */
@@ -249,15 +249,19 @@ li {
   margin: 0 auto;
 }
 
+/* Hover effekt på teamkort */
+.teamcard {
+  transition: transform 0.3s ease;
+}
+
+.teamcard:hover {
+  transform: scale(1.05);
+}
+
+/* Q&A sketion */
 .spørgsmål {
   background-color: var(--primary);
   color: var(--white);
   padding: 4rem;
   margin-bottom: 80px;
-}
-.herovideo {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 40px;
 }

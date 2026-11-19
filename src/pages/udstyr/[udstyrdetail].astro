@@ -1,4 +1,5 @@
 ---
+import Studiekort from "../../components/Studiekort.astro";
 export async function getStaticPaths() {
   const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
   const equipmentTableName = "equipment";
@@ -25,19 +26,77 @@ export async function getStaticPaths() {
     });
   }
 
-
   const { equipment } = Astro.props;
     import Layout from "../../layouts/Layout.astro";
 ---
 <Layout>
-  <div>
+  <Studiekort /> 
+  <a href="/udstyrsliste" class="back-arrow">
+    ←
+</a>
+  <div class="equipment-detail">
 <h1>{equipment.name}</h1>
 <p>{equipment.category}</p>
 <p>{equipment.subcategory}</p>
- <img src={equipment.image}>
- <h3>{equipment.availability}</h3>
+ <img class="image-container" src={equipment.image}>
  </div>
    <section>
 <a class="button" href="#">Se ledige tider</a>
     </section>
+    <section class="guide">
+      <h3>Sådan gør du:</h3>
+      <p>Klik på ledige tider og se om udstyret er ledigt</p>
+      <p>Er udstyret ledigt den dag du skal bruge det, går du ned i labbet, viser dit studiekort og fortæller navnet på det udstyr du vil leje</p>
+      <p>Har du spørgsmål til noget, må du altid komme forbi og spørge!</p>
+      <p>HUSK studiekort</p>
+    </section>
 </Layout>
+
+<style>
+  .guide {
+    padding-left: 7rem;
+    padding-bottom: 7rem;
+  }
+  .equipment-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.image-container {
+  border: 4px solid var(--primary);
+  padding: 2rem;
+  /* width: fit-content; */
+  margin-inline: auto;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  margin-left: 60rem;
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  margin-bottom: 40px;
+} 
+
+.back-arrow {
+  font-size: 4rem;
+  text-decoration: none;
+  color: var(--primary);
+
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+</style>

@@ -266,9 +266,31 @@ li {
 }
 
 /* Q&A sketion */
-.spørgsmål {
+.question-section {
+  text-align: center;
+}
+
+.question-box {
   background-color: var(--primary);
+  max-width: 850px;
+  margin: 0 auto 6rem;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+}
+
+.question-box details {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--secondary);
+  text-align: left;
+}
+
+.question-box summary {
   color: var(--white);
-  padding: 4rem;
-  margin-bottom: 80px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.question-box details p {
+  color: var(--white);
+  margin-top: 1rem;
 }

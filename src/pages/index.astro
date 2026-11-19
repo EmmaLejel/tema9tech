@@ -150,14 +150,37 @@ console.log("teamData", teamData);
         ))}
     </section>
 </section>
-<section class="center">
-		<h2>Ofte stillede spørgsmål</h2>
 
-						<ul class="spørgsmål">
-							<li>Åbningstider</li>
-							<li>Hvem kan bruge Tech & Story Lab?</li>
-							<li>Hvordan booker eller låner jeg udstyr?</li>
-							<li>Kan jeg få hjælp og vejledning?</li>
-						</ul>
-	</section>
+<!--- FAQ sektion
+<summary> gør spørgsmålet klikbart
+ --->
+<section class="center question-sektion">
+    <h2>Ofte stillede spørgsmål</h2>
+
+    <div class="question-box">
+
+        <details>
+            <summary>Åbningstider</summary>
+            <p>Mandag-onsdag: 8.00-15.00<br>
+            Torsdag-fredag: 8.00-14.00</p>
+        </details>
+
+        <details>
+            <summary>Hvem kan bruge Tech & Story Lab?</summary>
+            <p>Her kan du indsætte information om, hvem der må bruge labbet.</p>
+        </details>
+
+        <details>
+            <summary>Hvordan booker eller låner jeg udstyr?</summary>
+            <p>Her kan du indsætte information om booking og lån af udstyr.</p>
+        </details>
+
+        <details>
+            <summary>Kan jeg få hjælp og vejledning?</summary>
+            <p>Ja! Du kan altid få hjælp og vejledning af personalet i Tech & Story Lab.</p>
+        </details>
+
+    </div>
+</section>
+
 </Layout>

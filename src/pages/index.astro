@@ -13,7 +13,8 @@ import labsImage14 from "../assets/techandstorylab/Labs_14.jpg";
 import labsImage15 from "../assets/techandstorylab/Labs_15.jpg";
 import Card from "../components/Card.astro";
 import TeamCard from "../components/Teamcard.astro";
-// import Image from "astro/components/Image.astro";
+import EventCard from "../components/Events.astro";
+
 
 /* fetch data fra supabase */
 const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
@@ -29,7 +30,7 @@ apikey: key,
 	},
 }
 
-const eventsresponse =  await fetch (apiurl + eventsTableName, options);
+const eventsresponse =  await fetch (apiurl + eventsTableName + "?limit=5", options);
 const eventsData = await eventsresponse.json();
 console.log("eventsData", eventsData);
 
@@ -129,18 +130,16 @@ console.log("teamData", teamData);
 
 </section>
 <section class="center">
-	 <h2>Det sker i labbet</h2>
+   		<Card headline="Det sker i labbet" text="Alle events er gratis! Du skal bare møde op – husk dit studiekort. Ingen tilmelding nødvendig."/>
 
-                    <p>November</p>
-
-                    <ul>
-                        <li>AI Workshop</li>
-                        <li>Tech Bingo</li>
-                        <li>VR Experience Day</li>
-                        <li>Photo Challenge</li>
-                    </ul>
+    <div class="events-grid">
+        {eventsData.map((event) => (
+            <EventCard event={event} />
+        ))}
+    </div>
 </section>
-	<section class="center">
+
+<section class="center">
 		<Card headline="Teamet" text="Mød personerne bag labbet, og find ud af hvem du kan gå til for inspiration, sparring og hjælp."/>
 	</section>
 	

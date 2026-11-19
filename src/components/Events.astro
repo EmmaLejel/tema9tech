@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+
+// Henter event-data fra index.astro
+const { event } = Astro.props;
+---
+
+<article class="event-card">
+    <img src={event.image} alt={event.name} />
+    <div class="event-info">
+        <h3>{event.name}</h3>
+        <p>{event.description}</p>
+        <p class="event-date">{event.date}</p>
+    </div>
+</article>
+
+
+<style>
+    .event-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .event-card img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .event-info h3 {
+        margin: 0 0 0.5rem;
+        font-style: normal;
+    }
+
+    .event-info p {
+        margin: 0.5rem 0;
+    }
+
+    .event-date {
+        color: grey;
+    }
+</style>

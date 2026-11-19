@@ -185,6 +185,26 @@ li {
   opacity: 0.65;
 }
 
+/* 3D-video implementering af labbet ved hjælp af chat */
+.matterport-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.matterport-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  aspect-ratio: 16 / 9;
+}
+
+.matterport-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* teamsektion */
+
 .background {
   background-color: var(--primary);
   color: var(--white);

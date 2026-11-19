@@ -39,13 +39,14 @@ const teamData = await teamresponse.json();
 console.log("teamData", teamData);
 ---
 <Layout>
-		
+
+<!-- hero sektion video -->
 <video class="herovideo" autoplay loop playsinline>
-	<source src="/public/herosektionvid_techstory.mp4" type="video/mp4"/>
+	<source src="/herosektionvid_techstory.mp4" type="video/mp4"/>
 </video>
 
 
-
+<!-- Udstyr og video cta genvej -->
 <section class="center">
   <Card headline="Se udstyr og studios" text="Find udstyr og kreative studier til dit næste projekt."/>
 
@@ -53,9 +54,7 @@ console.log("teamData", teamData);
 		<!-- Studios -->
         <a href="/studios" class="cta-billede">
             <Image 
-                src={labsImage10} 
-                alt="Billede af fotostudie" 
-                width="500"
+                src={labsImage10} alt="Billede af fotostudie" width="500"
             />
             <div class="cta-overlay">
                 <h2>STUDIOS</h2>
@@ -65,9 +64,7 @@ console.log("teamData", teamData);
         <!-- Udstyr -->
         <a href="/udstyr" class="cta-billede">
             <Image 
-                src={labsImage3} 
-                alt="Billede af VR udstyr" 
-                width="500"
+                src={labsImage3} alt="Billede af VR udstyr" width="500"
             />
             <div class="cta-overlay">
                 <h2>UDSTYR</h2>
@@ -77,14 +74,22 @@ console.log("teamData", teamData);
 </section>
 
 
-
-<section class="center">
-		
+<!-- 3D video implementering af labbet ved hjælp af chat-->
+<!--Matterport er en platform, der laver interaktive 3D-rundvisninger af fysiske lokaler og bygninger.-->
+<!-- iframe Indsætter eksternt indhold fra Matterport -->
+<!-- Allowfullscreen giver mulighed for at vise rundvisningen i fuld skærm -->
+ <section class="matterport-section"> 
 	<Card headline="Udforsk og oplev labbet" text="Kom helt tæt på og udforsk Tech & Story Lab."/>
-	<Image src={labsImage2} alt="billede af to personer i tech and story lab" width="500"/>
+
+    <div class="matterport-container"> 
+        <iframe
+            src="https://my.matterport.com/show/?m=KcfuPDJ3H2F"
+            allowfullscreen
+        ></iframe> 
+    </div>
 </section>
 
-
+<!-- Inspirationsbilleder fra labbet -->
 <section class="center">
 	<Card headline="Udforsk. Eksperimentér. Skab." text="Få inspiration fra idéer og eksperimenter, som studerende og undervisere har skabt med teknologi i Tech & Story Lab."/>
 </section>

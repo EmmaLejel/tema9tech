@@ -4,6 +4,16 @@ import Layout from "../layouts/Layout.astro"
 import { Image } from "astro:assets";
 import labsImage10 from "../assets/techandstorylab/Labs_10.jpg";
 import labsImage3 from "../assets/techandstorylab/Labs_3.jpg";
+<<<<<<< HEAD
+=======
+import labsImage2 from "../assets/techandstorylab/Labs_2.jpg";
+import labsImage1 from "../assets/techandstorylab/Labs_1.jpg";
+import labsImage11 from "../assets/techandstorylab/Labs_11.jpg";
+import labsImage12 from "../assets/techandstorylab/Labs_12.jpg";
+import labsImage13 from "../assets/techandstorylab/Labs_13.jpg";
+import labsImage14 from "../assets/techandstorylab/Labs_14.jpg";
+import labsImage15 from "../assets/techandstorylab/Labs_15.jpg";
+>>>>>>> inspirationscrollbar
 import Card from "../components/Card.astro";
 import TeamCard from "../components/Teamcard.astro";
 // import Image from "astro/components/Image.astro";
@@ -90,22 +100,33 @@ console.log("teamData", teamData);
 	<Card headline="Udforsk. Eksperimentér. Skab." text="Få inspiration fra idéer og eksperimenter, som studerende og undervisere har skabt med teknologi i Tech & Story Lab."/>
 </section>
 
+<section class="background inspirations-slide">
 
-<section class="background inspiration-slider">
+ <div class="inspirations-track">
 
-    <div class="inspiration-track">
+    <div class="inspirations-billeder">
+    <Image src={labsImage1} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage2} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage3} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage10} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage11} alt="Podcaststudie" width={370} />
+    <Image src={labsImage12} alt="Fotostudie" width={370} />
+    <Image src={labsImage13} alt="Arbejde med tøj" width={370} />
+    <Image src={labsImage14} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage15} alt="Billede fra labbet" width={370} />    
+    </div>
 
-        <div class="inspiration-group">
-            {eventsData.map((event) => (
-                <img src={event.image} alt={event.name} />
-            ))}
-        </div>
-
-        <div class="inspiration-group">
-            {eventsData.map((event) => (
-                <img src={event.image} alt={event.name} />
-            ))}
-        </div>
+    <div class="inspirations-billeder">
+    <Image src={labsImage1} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage2} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage3} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage10} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage11} alt="Podcaststudie" width={370} />
+    <Image src={labsImage12} alt="Fotostudie" width={370} />
+    <Image src={labsImage13} alt="Arbejde med tøj" width={370} />
+    <Image src={labsImage14} alt="Billede fra labbet" width={370} />
+    <Image src={labsImage15} alt="Billede fra labbet" width={370} />    
+    </div>
 
     </div>
 

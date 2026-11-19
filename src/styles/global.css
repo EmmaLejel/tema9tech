@@ -203,25 +203,25 @@ li {
   border: none;
 }
 
-/* Inspirationsslider */
-.inspiration-slider {
+/* Inspirations-slider */
+.inspirations-slide {
   overflow: hidden;
   padding: 3rem 0;
 }
 
-.inspiration-track {
+.inspirations-track {
   display: flex;
   width: max-content;
   animation: scroll 35s linear infinite;
 }
 
-.inspiration-group {
+.inspirations-billeder {
   display: flex;
   gap: 2rem;
   padding-right: 2rem;
 }
 
-.inspiration-group img {
+.inspirations-billeder img {
   width: 370px;
   height: 210px;
   object-fit: cover;

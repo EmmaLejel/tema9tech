@@ -133,6 +133,78 @@ li {
   text-align: center;
 }
 
+/* Studios og udstyr CTA */
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.cta-billede {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 550px;
+}
+
+.cta-billede img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lilla transparent lag */
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Teksten på billedet */
+
+.cta-overlay h2 {
+  color: var(--white);
+  margin: 0;
+  font-size: 3rem;
+}
+
+/* Hovereffekt */
+
+.cta-billede:hover .cta-overlay {
+  opacity: 0.65;
+}
+
+/* 3D-video implementering af labbet ved hjælp af chat */
+.matterport-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.matterport-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  aspect-ratio: 16 / 9;
+}
+
+.matterport-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* teamsektion */
+
 .background {
   background-color: var(--primary);
   color: var(--white);

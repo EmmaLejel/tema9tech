@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro"
 import Studios from "../components/Studios.astro";
 import Udstyr from "../components/Udstyr.astro";
 import Studiekort from "../components/Studiekort.astro";
+import Card from "../components/Card.astro";
+
 
 const apiurl = "https://qyjbtbvaznmdaetlwbom.supabase.co/rest/v1/";
 const studiosTableName = "studios";
@@ -46,13 +48,9 @@ const equipmentData = await equipmentresponse.json();
     </section>
     </section>
     <section class="intro">
-        <h2>
-            Mangler du udstyr til dine ideer?
-        </h2>
-        <p>
-            Udforsk vores store udvalg af udstyr til dine kreative projekter
-        </p>
+        <Card headline="Mangler du udstyr til dine ideer?" text="Udforsk vores store udvalg af udstyr til dine kreative projekter"/>
     </section>
+
     <section class="udstyr-kort">
     {
         equipmentData.map((udstyr) => {

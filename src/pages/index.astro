@@ -94,12 +94,26 @@ console.log("teamData", teamData);
 	<Card headline="Udforsk. Eksperimentér. Skab." text="Få inspiration fra idéer og eksperimenter, som studerende og undervisere har skabt med teknologi i Tech & Story Lab."/>
 </section>
 
-<section class="background">
-	<Image src={labsImage11} alt="billede af to personer i podcast studie" width="200"/>
-	<Image src={labsImage12} alt="billede af fotostudiet" width="227"/>
-	<Image src={labsImage13} alt="billede af en der arbejder med tøj" width="200"/>
-</section>
 
+<section class="background inspiration-slider">
+
+    <div class="inspiration-track">
+
+        <div class="inspiration-group">
+            {eventsData.map((event) => (
+                <img src={event.image} alt={event.name} />
+            ))}
+        </div>
+
+        <div class="inspiration-group">
+            {eventsData.map((event) => (
+                <img src={event.image} alt={event.name} />
+            ))}
+        </div>
+
+    </div>
+
+</section>
 <section class="center">
 	 <h2>Det sker i labbet</h2>
 

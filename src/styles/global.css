@@ -203,8 +203,38 @@ li {
   border: none;
 }
 
-/* teamsektion */
+/* Inspirationsslider */
+.inspiration-slider {
+  overflow: hidden;
+  padding: 3rem 0;
+}
 
+.inspiration-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.inspiration-group {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
+}
+
+.inspiration-group img {
+  width: 370px;
+  height: 210px;
+  object-fit: cover;
+}
+
+/* Billederne scroller automatisk */
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* teamsektion */
 .background {
   background-color: var(--primary);
   color: var(--white);
